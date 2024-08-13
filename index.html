@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+main {
+    padding: 20px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#clock {
+    font-size: 3em;
+    font-weight: bold;
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAM WAKTU</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>JAM WAKTU</h1>
+    </header>
+    
+    <main>
+        <div id="clock">
+            <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>
+        </div>
+    </main>
+    
+    <footer>
+        <p>JAM PUNYA ILHAM</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    function updateClock() {
+        const now = new Date();
+        
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        
+        document.getElementById('hour').textContent = hours;
+        document.getElementById('minute').textContent = minutes;
+        document.getElementById('second').textContent = seconds;
+    }
+
+    // Update clock every second
+    setInterval(updateClock, 1000);
+
+    // Initial call to display the clock immediately
+    updateClock();
+});
+
+    </script>
+</body>
+</html>
